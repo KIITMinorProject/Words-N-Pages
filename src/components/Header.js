@@ -16,8 +16,11 @@ function Header() {
         auth.signOut();
       }
     }
+    const handleClick = () => {
+    <Product />
+  }
     return (
-      <div className="header">
+      <div className="header" style={{ justifyContent: "space-between" }}>
           <Link to="/">
             <img className="header__logo" src={Logo} alt="words-n-pages"/>
           </Link>
@@ -28,6 +31,12 @@ function Header() {
         </div>
   
         <div className="header__nav">
+            <Link to='/product'>
+          <div onClick={handleClick} className="header__option">
+            <span className="header__optionLineOne">View</span>
+            <span className="header__optionLineTwo">Items</span>
+          </div>
+        </Link>
         <Link to={!user && '/login'}>
           <div onClick={handleAuthenticaton} className="header__option">
             <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
@@ -64,9 +73,12 @@ function Header() {
           <Link to="/checkout">
             <div className="header__optionBasket">
               <ShoppingCartRoundedIcon />
+                <div className="header__option">
+              <span className="header__optionLineOne">Cart</span>
               <span className="header__optionLineTwo header__basketCount">
                 {basket?.length}
               </span>
+               </div>
             </div>
           </Link>
         </div>
