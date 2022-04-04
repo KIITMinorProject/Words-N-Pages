@@ -4,7 +4,7 @@ import Subtotal from "./Subtotal";
 import { useStateValue } from "../context/StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import { Link, useHistory } from "react-router-dom";
-
+import Logo from "./logo.png"
 import FlipMove from "react-flip-move";
 
 function Checkout() {
@@ -16,7 +16,7 @@ function Checkout() {
       <Link to="/">
         <div className="checkout__center">
           <img
-            src="https://miro.medium.com/max/396/0*bVnfVVG7Y7qXQcO1" alt=""
+            src={Logo} alt=""
             style={{ height: 70, marginTop: 20 }}
             onClick={() =>
               dispatch({
@@ -32,11 +32,11 @@ function Checkout() {
           <img
             className="checkout__ad"
             alt=""
-            src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
+            src=""
           />
           <div>
             <h3>Hello {user?.email}</h3>
-            <h2 className="checkout__title">Your Shopping Basket</h2>
+            <h2 className="checkout__title">Your Shopping Cart</h2>
           </div>
           <FinalProducts />
         </div>
